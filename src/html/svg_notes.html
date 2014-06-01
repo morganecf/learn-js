@@ -1,0 +1,348 @@
+<!-- 
+	SVG: Scalable Vector Graphics. 
+	Images can be compressed, don't lose quality on zoom-in. 
+	SVG files: pure XML
+
+	Here: examples of SVG directly embedded in HTML file. 
+-->
+
+<html>
+	<body>
+		<h1> SVG basics! </h1>
+
+		<!-- circle -->
+		<svg width="200" height="200">
+			<!-- cx cy define coordinates of center, r is radius, stroke is outline of circle -->
+			<circle cx="100" cy="100" r="50" stroke="green" stroke-width="4" fill="yellow"/> 
+		</svg>
+
+		<!-- rectangle -->
+		<svg width="400" height="400">
+			<rect width="300" height="100" style="fill:rgb(0,0,250);stroke-width:4;stroke:rgb(0,1,0)" />
+		</svg>
+
+		<!-- rectangle placed somewhere with stroke/fill opacity -->
+		<svg width="400" height="400">
+			<rect x="20" y="20" width="90" height="90" style="fill:blue;stroke:pink;stroke-width:3;
+																fill-opacity:0.1;stroke-opacity:.8" />
+		</svg>
+
+		<!-- rectangle with total opacity and rounded corners (rx, ry)--> 
+		<svg width="400" height="400">
+			<rect rx="10" ry="10" width="90" height="90" style="fill:blue;stroke:pink;stroke-width:3;
+																opacity:.5" />
+		</svg>
+
+		<!-- ellipse -->
+		<svg width="400" height="400">
+			<ellipse cx="250" cy="80" rx="80" ry="50" style="fill:yellow;stroke:purple;stroke-width:5"; />
+		</svg>
+
+		<!-- stacked rainbow ellipses -->
+		<svg width="500" height="500">
+			<ellipse cx="200" cy="50" rx="200" ry="40" style="fill:red;opacity:.5" />
+			<ellipse cx="220" cy="60" rx="160" ry="36" style="fill:purple;opacity:.5" />
+			<ellipse cx="240" cy="70" rx="120" ry="32" style="fill:blue;opacity:.5" />
+			<ellipse cx="260" cy="80" rx="80" ry="28" style="fill:green;opacity:.5" />
+			<ellipse cx="280" cy="90" rx="60" ry="24" style="fill:yellow;opacity:.3" />
+			<ellipse cx="290" cy="100" rx="40" ry="20" style="fill:yellow;opacity:.5" />
+		</svg>
+
+		<!-- rotating rainbow ellipses -->
+		<svg width="1000" height="1000">
+			
+			
+			<ellipse cx="220" cy="60" rx="160" ry="36" style="fill:purple;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="2s" dur="20s" type="rotate" 
+								from="0 220 60" to="360 220 60"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="240" cy="70" rx="120" ry="32" style="fill:blue;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="2s" dur="20s" type="rotate" 
+								from="0 240 70" to="360 240 70"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="260" cy="80" rx="80" ry="28" style="fill:green;opacity:.5" >
+				<animateTransform attributeName="transform" 
+								begin="2s" dur="20s" type="rotate" 
+								from="0 260 80" to="360 260 80"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="280" cy="90" rx="60" ry="24" style="fill:yellow;opacity:.3">
+				<animateTransform attributeName="transform" 
+								begin="2s" dur="20s" type="rotate" 
+								from="0 280 90" to="360 280 90"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="290" cy="100" rx="40" ry="20" style="fill:yellow;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="2s" dur="20s" type="rotate" 
+								from="0 290 100" to="360 290 100"
+								repeatCount="indefinite" />
+			</ellipse>
+
+
+			<ellipse cx="200" cy="50" rx="200" ry="40" style="fill:red;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 200 50" to="360 200 50"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="220" cy="60" rx="160" ry="36" style="fill:purple;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 220 60" to="360 220 60"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="240" cy="70" rx="120" ry="32" style="fill:blue;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 240 70" to="360 240 70"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="260" cy="80" rx="80" ry="28" style="fill:green;opacity:.5" >
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 260 80" to="360 260 80"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="280" cy="90" rx="60" ry="24" style="fill:yellow;opacity:.3">
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 280 90" to="360 280 90"
+								repeatCount="indefinite" />
+			</ellipse>
+			<ellipse cx="290" cy="100" rx="40" ry="20" style="fill:yellow;opacity:.5">
+				<animateTransform attributeName="transform" 
+								begin="5s" dur="20s" type="rotate" 
+								from="0 290 100" to="360 290 100"
+								repeatCount="indefinite" />
+			</ellipse>
+		</svg>
+
+		<!-- combined ellipses -->
+		<svg width="600" height="400">
+			<ellipse cx="250" cy="120" rx="200" ry="100" style="fill:orange;opacity:.8;stroke-width:3;stroke:blue;stroke-opacity:.7" />
+			<ellipse cx="250" cy="145" rx="180" ry="80" style="fill:white" />
+		</svg>
+
+		<!-- contained ellipses --> 
+		<svg width="600" height="400">
+			<ellipse cx="250" cy="120" rx="200" ry="100" style="fill:orange;opacity:.8;" />
+			<ellipse cx="280" cy="125" rx="190" ry="80" style="fill:white" />
+		</svg>
+
+		<!-- line --> 
+		<svg width="400" height="400">
+			<!-- line from point (20,20) to point (80,80) -->
+			<line x1="0" y1="0" x2="400" y2="400" style="stroke-width:5;stroke:pink" />
+		</svg>
+
+		<!-- right triangle -->
+		<svg width="200" height="200">
+			<polygon points="0,0 150,150 0,150" style="fill:lime;opacity:.6;stroke:green" />
+		</svg>
+
+		<!-- pyramid -->
+		<svg width="300" height="300">
+			<polygon points="50,50 80,0 150,60 80,200" style="fill:lime;opacity:.6;stroke:green" />
+			<line x1="80" y1="0" x2="80" y2="200" style="stroke:green" />
+			<line x1="50" y1="50" x2="150" y2="60" style="stroke:green;opacity:.5;"/>
+		</svg>
+
+		<!-- OTHER
+			path 
+				stroke-dasharray	dashed lines
+				stroke-linecap		end of line style
+
+			fill-rule:evenodd
+		--> 
+
+		<!-- star made of 2 triangles -->
+		<svg width="400" height="400">
+			<polygon points="5,45 45,5 90,45" style="fill:lime;fill-rule:evenodd" />
+			<polygon points="5,20, 90,20 45,60" style="fill:lime;" />
+		</svg>
+
+		<!-- star made with one polygon -->
+		<svg height="210" width="500">
+  			<polygon points="100,10 40,180 190,60 10,60 160,180"
+  				style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+		</svg>
+
+		<!-- flower -->
+		<svg height="600" width="500">
+			<!-- stem --> 
+			<line x1="120" y1="145" x2="120" y2="450" style="stroke:green;stroke-width:8;opacity:.8" />
+			<!-- petals --> 
+			<circle cx="100" cy="100" r="50" style="fill:purple;opacity:.7" />	 <!-- upper left --> 
+			<circle cx="150" cy="100" r="50" style="fill:purple;opacity:.7" /> <!-- upper right -->
+			<circle cx="80" cy="160" r="50" style="fill:purple;opacity:.7" /> <!-- lower left -->
+			<circle cx="155" cy="180" r="50" style="fill:purple;opacity:.7" /> <!-- lower right -->
+			<!-- bud -->
+			<circle cx="120" cy="145" r="20" style="fill:yellow;opacity:.8" />
+			<!-- leaves --> 
+			<path d="M120,290 C145,330 195,270 220,300" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+																stroke-opacity:.8;"/> 
+			<path d="M220,300 A20,10 0 0,0 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+																stroke-opacity:.8"/>
+
+			<path d="M120,290 C95,330 45,390 45,350" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+																stroke-opacity:.8;"/> 
+			<path d="M45,350 A20,10 0 1,1 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+																stroke-opacity:.8;"/> 
+			<!--<path d="M220,300 A20,10 0 0,0 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+																stroke-opacity:.8"/>-->
+		</svg>
+
+		<!-- prettier flower ??? --> 
+		<svg height="500" width="500">
+			<!-- <g transform="rotate(45 50 50)" >-->
+				<!-- 
+					stroke-linecap property 
+					round, butt, square
+				--> 
+				<path d="M120,290 C95,330 45,390 45,350"  
+					stroke-linecap="round"
+					style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;stroke-opacity:.8;"/> 
+				<!-- 
+					stroke-dasharray property 
+				--> 
+				<path d="M45,350 A20,10 0 1,1 120,290" 
+					stroke-dasharray="5,5"
+					style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6; stroke-opacity:.8;"/>
+			<!-- </g> --> 
+		</svg>
+
+		<!-- dragonfly --> 
+		<svg height="500" width="500">
+			<!-- left wings --> 
+			<ellipse cx="160" cy="300" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="160" cy="315" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="160" cy="330" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="160" cy="307" rx="50" ry="8" style="fill:green;opacity:.3" />
+			<ellipse cx="160" cy="323" rx="50" ry="8" style="fill:green;opacity:.3" />
+
+			<!-- right wings --> 
+			<ellipse cx="260" cy="300" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="260" cy="315" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="260" cy="330" rx="50" ry="10" style="fill:lime;opacity:.7" />
+			<ellipse cx="260" cy="307" rx="50" ry="8" style="fill:green;opacity:.3" />
+			<ellipse cx="260" cy="323" rx="50" ry="8" style="fill:green;opacity:.3" />
+
+			<!-- body -->
+			<ellipse cx="210" cy="345" rx="5" ry="70" style="fill:yellow"/>
+
+			<!-- eyes -->
+			<circle cx="205" cy="280" r="5" style="fill:blue;opacity:.7"/>
+			<circle cx="215" cy="280" r="5" style="fill:blue;opacity:.7"/>
+		</svg> 
+
+		<!-- folded paper -->
+		<svg height="300" width="200">
+			<!-- outline --> 
+			<polyline points="0,200 40,200 40,160 80,160 80,120 120,120 120,80 160,80 160,40" style="fill:white;stroke:red"/>
+			<polyline points="25,225 65,225 65,185 105,185 105,145 145,145 145,105 185,105  185,65" style="fill:white;stroke:red"/>
+			<!-- connectors -->
+			<line x1="0" y1="200" x2="25" y2="225" style="stroke:red;"/>
+			<line x1="40" y1="200" x2="65" y2="225" style="stroke:red;"/>
+			<line x1="40" y1="160" x2="65" y2="185" style="stroke:red;"/>
+			<line x1="80" y1="160" x2="105" y2="185" style="stroke:red;"/>
+			<line x1="80" y1="120" x2="105" y2="145" style="stroke:red" />
+			<line x1="120" y1="120" x2="145" y2="145" style="stroke:red" />
+			<line x1="120" y1="80" x2="145" y2="105" style="stroke:red" />
+			<line x1="160" y1="80" x2="185" y2="105" style="stroke:red" />
+			<line x1="160" y1="40" x2="185" y2="65" style="stroke:red" />
+		</svg>
+
+		<!-- PATH element
+			M = moveto 
+			L = lineto
+			H = horizontal lineto
+			V = vertical lineto
+			C = curveto
+			S = smooth curveto
+			Q = quadratic Bezier curve
+			T = smooth quadratic Bezier curve
+			A = elliptical arc
+			Z = closepath
+			uppercase means absolutely positioned
+			lowercase means relatively positioned 
+		-->
+
+		<!-- an arc --> 
+		<svg height="150" width="150">
+		<!-- move to 50,50, arc at 30,50 -->
+			<path d="M50,50 A30,50 0 0,1 100,100" style="stroke:blue;stroke-width:5;fill:none"/>
+		</svg>
+
+		<!-- bezier curve example --> 
+		<svg height="400" width="450">
+  			<path id="lineAB" d="M 100 350 l 150 -300" stroke="red" stroke-width="3" fill="none" />
+  			<path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="3" fill="none" />
+  			<path d="M 175 200 l 150 0" stroke="green" stroke-width="3" fill="none" />
+  			<path d="M 100 350 q 150 -300 300 0" stroke="blue" stroke-width="5" fill="none" />
+			  
+			<!-- Mark relevant points -->
+			<g stroke="black" stroke-width="3" fill="black">
+				<circle id="pointA" cx="100" cy="350" r="3" />
+				<circle id="pointB" cx="250" cy="50" r="3" />
+				<circle id="pointC" cx="400" cy="350" r="3" />
+			</g>
+
+		  <!-- Label the points -->
+			<g font-size="30" font="sans-serif" fill="black" stroke="none" text-anchor="middle">
+				<text x="100" y="350" dx="-30">A</text>
+				<text x="250" y="50" dy="-10">B</text>
+				<text x="400" y="350" dx="30">C</text>
+			</g>
+		</svg>
+
+		<!-- text --> 
+		<svg height="300" width="500">
+			<text x="5" y="60" fill="pink" font-size="60" transform="rotate(30 20,40)"> I LOVE SVG! </text>
+		</svg>
+
+		<!-- cool shape --> 
+		<svg height="400" width="400">
+				<path d="M100,100
+         				L150,100
+         				a50,25 0 0,0 150,100
+         				q50,-50 70,-170
+         				Z"
+     				style="stroke: #006666; fill: pink;"/>
+		</svg>
+
+		<!-- heart --> 
+		<svg height="1000" width="1000">
+			<!-- morg body-->
+			<path d="M400,400 Q180,180 400,600" style="stroke-linecap:round;stroke:red;fill:pink;stroke-width:4;stroke-opacity:.7"/>
+			<path d="M400,400 Q520,180 400,600" style="stroke-linecap:round;stroke:red;fill:pink;stroke-width:4;stroke-opacity:.7"/>
+			<!-- morg eyes --> 
+			<ellipse cx="420" cy="420" rx="10" ry="20" style="fill:white;stroke:grey;stroke-width:3.5"/>
+			<ellipse cx="380" cy="420" rx="10" ry="25" style="fill:white;stroke:grey;stroke-width:3.5"/>
+			<circle cx="420" cy="420" r="5" style="fill:black"/>
+			<circle cx="380" cy="420" r="5" style="fill:black"/>
+<!--			<line x1="400" y1="430" x2="450" y2="450" style="stroke:black;stroke-width:4"/> -->
+
+			<!-- warren body -->
+			<path d="M565,400 Q360,180 575,600" style="stroke-linecap:round;stroke:blue;fill:purple;fill-opacity:.6;stroke-width:4;stroke-opacity:.7"/>
+			<path d="M565,400 Q800,200 575,600" style="stroke-linecap:round;stroke:blue;fill:purple;fill-opacity:.6;stroke-width:4;stroke-opacity:.7"/>
+			<!-- warren eyes --> 
+			<ellipse cx="530" cy="420" rx="10" ry="20" style="fill:white;stroke:grey;stroke-width:3.5"/>
+			<ellipse cx="580" cy="420" rx="10" ry="25" style="fill:white;stroke:grey;stroke-width:3.5"/>
+			<circle cx="530" cy="420" r="5" style="fill:black"/>
+			<circle cx="580" cy="420" r="5" style="fill:black"/>
+
+		</svg>
+
+		<!-- filters --> 
+
+
+		
+
+	</body>
+
+</html>

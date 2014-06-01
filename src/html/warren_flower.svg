@@ -1,0 +1,45 @@
+<!-- flower -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flower" height="500" width="500">
+	<!-- stem --> 
+	<!-- <line x1="120" y1="145" x2="120" y2="350" style="stroke:green;stroke-width:8;opacity:.8" /> -->
+	<line x1="150" y1="0" x2="150" y2="150" style="stroke:green;stroke-width:8;opacity:.8" />
+
+	<!-- petals --> 
+	<!-- upper left --> 
+	<circle cx="100" cy="100" r="50" style="fill:purple;opacity:.7">
+		<animate attributeName="cy" from="100" to="100" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+		<animate attributeName="cx" from="100" to="150" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+	</circle>
+	<!-- upper right -->	 
+	<circle cx="150" cy="100" r="50" style="fill:purple;opacity:.7">
+		<animate attributeName="cx" from="150" to="155" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+		<animate attributeName="cy" from="100" to="180" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+	</circle> 
+	<!-- lower left -->
+	<circle cx="80" cy="160" r="50" style="fill:purple;opacity:.7">
+		<animate attributeName="cx" from="80" to="100" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+		<animate attributeName="cy" from="160" to="100" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+	</circle> 
+	<!-- lower right -->
+	<circle cx="155" cy="180" r="50" style="fill:purple;opacity:.7">
+		<animate attributeName="cx" from="155" to="80" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+		<animate attributeName="cy" from="180" to="160" begin="5s" dur="10s" fill="remove" repeatCount="indefinite" />
+	</circle> 
+
+	<!-- bud -->
+	<circle cx="120" cy="145" r="20" style="fill:yellow;opacity:.8"> </circle>
+
+	<!-- leaves --> 
+	<path d="M120,290 C145,330 195,270 220,300" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+														stroke-opacity:.8;"/> 
+	<path d="M220,300 A20,10 0 0,0 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+														stroke-opacity:.8"/>
+
+	<path d="M120,290 C95,330 45,390 45,350" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+														stroke-opacity:.8;"/> 
+	<path d="M45,350 A20,10 0 1,1 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+														stroke-opacity:.8;"/> 
+	<!--<path d="M220,300 A20,10 0 0,0 120,290" style="stroke:green;stroke-width:4;fill:green;fill-opacity:.6;
+														stroke-opacity:.8"/>-->
+
+</svg>

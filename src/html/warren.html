@@ -1,0 +1,91 @@
+<html>
+	<head> <meta charset="UTF-8"> </head>
+	<body>
+		<object class="hsvg" id="heart-svg" width="780" height="800" type="image/svg+xml" data="warren.svg"> </object>
+	</body>
+	<script>
+		/* Make speech appear in bubble */
+		function speak(svgDoc, bubbleId, index) {
+			// Get the non-speaker information and hide it 
+			var otherId = bubbleId === "morgbubble" ? "warrbubble" : "morgbubble";
+			var other = svgDoc.getElementById(otherId);
+			other.setAttribute("visibility", "hidden");
+			var otherTextId = otherId.slice(0,4) + "text";
+			svgDoc.getElementById(otherTextId).setAttribute("visibility", "hidden");
+			// Get current speaker information and insert text
+			var bubble = svgDoc.getElementById(bubbleId);
+			var textId = bubbleId.slice(0,4) + "text";
+			var text = svgDoc.getElementById(textId)
+			text.innerHTML = dialog[index];
+			bubble.setAttribute("visibility", "visible");
+			text.setAttribute("visibility", "visible");			
+		}
+
+		/* Set smile visibility */
+		function smile(svgDoc, smile_id) {
+			var elem = svgDoc.getElementById(smile_id);
+			elem.setAttribute("visibility", "visible");
+		}
+
+	</script>
+
+	<script>
+		var raw_dialog = "M:Hi;;W:Hello;;M:I hope you had a nice day!;;W:Thanks!;;M:I feel silly for my attitude;;M:towards you sometimes.;;W:...;;M:I think you are a really wonderful;;M:and passionate person.;;W:true...;;M:and I would love to exist;;M: with you in a constant;;M:interchange of words and;;M:information and ideas!;;W:and bodily fluids!;;M:...in a mature and loving;;M:and interested way, without;;M:feeling fruitlessly defensive;;M:and self-involved.;;M:It would be nice to learn;;M:and grow together;;M:instead of being hampered;;M:by retrograde behavior;;M:on the part of a person;;M:who cares about you!;;W:Good thought.;;M:So I'm sorry for making you feel bad!;;M:It's stupid to do that;;M:to someone I care about!;;W:It's okay!;;M:I look forward to;;M:many more conversations;;M:with you about whatever;;M:we want to talk about.;;M:I will listen with an open mind;;M:and an open heart!;;W:And open legs?;;M:Yes!;;W:Hurray!;;M:I love you!"
+		var sequence = [];
+		var dialog = raw_dialog.split(';;').map(function(elem) {
+			var info = elem.split(":");
+			var speaker = info[0] === "M" ? "morg" : "warr";
+			this.sequence.push(speaker);
+			console.log(info[1])
+			return info[1];
+		} );
+		// this should be an okay heuristic for reading times
+		var times = dialog.map(function(elem) {
+			if(elem.split(" ").length < 3) return 2000;
+			else return (elem.split(" ").length/2)*1000;
+		} );
+
+		window.onload = function() {
+			// Get the SVG element 
+			var svg = document.getElementById("heart-svg");
+			var svgDocument;
+
+			// Ensure that SVG doc has loaded before accessing its elements
+			svg.addEventListener("load", function() {
+				svgDocument = svg.contentDocument;
+
+				// Go through dialogue 
+				var i = 0;
+				var step = function() {
+					speak(svgDocument, sequence[i]+"bubble", i);
+					if(i < dialog.length) {
+						setTimeout(step, times[i]);
+					}
+					i++;
+				};
+				setTimeout(step, 1500);
+
+				// Smile
+				var nextTime = times.slice(0,times.length-1).reduce(function(a,b) { return a + b; });
+				setTimeout(function() {
+					smile(svgDocument, "morgsmile");
+					setTimeout(function() {
+						smile(svgDocument, "warrsmile"); 
+					}, 1000)
+				}, nextTime);
+
+				// Grin!
+				nextTime = nextTime + 3000;
+				setTimeout(function() {
+					smile(svgDocument, "warrgrin");
+					setTimeout(function() {
+						smile(svgDocument, "morggrin");
+					},500);
+				}, nextTime);
+
+			}, false);
+		}(); 
+	
+	</script>
+
+</html>
